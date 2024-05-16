@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ instance.name }}</title>
+    <style>
+    a {
+        text-decoration:none;
+        color: #ffed00;
+    }
+    .div-container:hover { text-decoration:none; }
+    .ite:hover { text-decoration: underline; }
+    body {
+        background-color: #48d1cc;
+    }
+        h1 {
+        color: #f5f5dc;
+        }
+    .div-inline {
+        font-size: 30px;
+    }
+    div-inline {
+    display: inline;
+     position: relative;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: justify;
+	}
+	.div-inline:after{
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: auto;
+		box-sizing: border-box;
+		vertical-align: top;
+		content: '';
+	}
+	.div-inline>div{
+		position: relative;
+		display: inline-block;
+		width: 24%;
+		height: 50px;
+		box-sizing: border-box;
+		text-align: center;
+		vertical-align: top;
+	}
+	.text {
+	font-size: 22px;
+	color: #ffed00;
+	}
+	.relo {
+	color: #f5f5dc;
+	font-size: 25px;
+	}
+	.but {
+	font-size: 25px;
+	}
+	body {
+	justify-content: center;
+	text-align:center;
+	margin: auto;
+	}
+    </style>
+</head>
+<body>
+    <ul class="div-inline">
+         <div><a href="/Music/"> Главная </a></div>
+        <div><a href="/Music/buyer_list/"> Покупатели </a></div>
+        <div><a href="/Music/buying/"> Купить Билет </a></div>
+        <div><a href="/Music/buyer/"> Регистрация </a></div>
+      </ul>
+    <div class="text">
+        <p>Имя: {{instance.first_name}}</p>
+        <p>Фамилия: {{instance.last_name}}</p>
+        <p>EMAIL: {{instance.email}}</p>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <a class="relo" href="/Music/{{instance.id}}/update">
+            Обновить
+        </a>
+    <br>
+<form action = "../../buyer_list/">
+                    <input type = "submit" value = "ОК" class="but">
+                </form>
+</body>
+</html>
