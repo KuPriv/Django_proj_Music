@@ -9,6 +9,7 @@ app_name = 'Music'
 urlpatterns = [
     path("", concert_list),
     path('buyer_list/', buyer_list),
+    path('buyer/', buyer_create),
     path("home/", concert_home),
     path("detail/<int:id>/", concert_detail, name='detail'),
     path("details/<int:id>/", buyer_detail, name='details'),
